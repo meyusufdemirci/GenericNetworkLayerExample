@@ -8,4 +8,13 @@
 
 import UIKit
 
-class HomeController: UIViewController {}
+class HomeController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Services.avgPrice(symbol: "BTCUSDT") { (response, error) in
+            // handle response
+        }
+    }
+}

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  GenericNetworkLayeriOS
+
+  Created by Yusuf Demirci on 16.04.2020.
+  Copyright © 2020 Yusuf Demirci. All rights reserved.
+*/
+
+// MARK: - Error
+Error_general = "An error occured";
+Error_parsing = "A parsing error occured";
