@@ -13,8 +13,15 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Services.avgPrice(symbol: "BTCUSDT") { (response, error) in
-            // handle response
+        Services.avgPrice(symbol: "BTCUSDT") { result in
+            switch result {
+            case Result.success(let response):
+                // Handle successfull response
+                break
+            case Result.failure(let error):
+                // Handle error
+                break
+            }
         }
     }
 }

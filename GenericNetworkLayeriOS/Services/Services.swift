@@ -10,9 +10,9 @@ import Foundation
 
 class Services {
     
-    class func avgPrice(symbol: String, completion: @escaping(ResponseModel<AveragePriceResponseModel>?, ErrorModel?) -> Void) {
-        ServiceManager.shared.sendRequest(request: AveragePriceRequestModel(symbol: symbol)) { (response: ResponseModel<AveragePriceResponseModel>?, error: ErrorModel?) in
-            completion(response, error)
+    class func avgPrice(symbol: String, completion: @escaping(Swift.Result<AveragePriceResponseModel, ErrorModel>) -> Void) {
+        ServiceManager.shared.sendRequest(request: AveragePriceRequestModel(symbol: symbol)) { (result) in
+            completion(result)
         }
     }
 }

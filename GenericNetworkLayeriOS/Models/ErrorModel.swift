@@ -6,7 +6,7 @@
 //  Copyright © 2020 Yusuf Demirci. All rights reserved.
 //
 
-class ErrorModel {
+class ErrorModel: Error {
     
     // MARK: - Properties
     var messageKey: String
@@ -23,6 +23,6 @@ class ErrorModel {
 extension ErrorModel {
     
     class func generalError() -> ErrorModel {
-        return ErrorModel(Error.general.rawValue)
+        return ErrorModel(ErrorKey.general.rawValue)
     }
 }

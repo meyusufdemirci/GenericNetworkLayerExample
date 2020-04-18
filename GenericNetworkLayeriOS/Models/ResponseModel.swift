@@ -13,8 +13,15 @@ struct ResponseModel<T: Codable>: Codable {
     // MARK: - Properties
     var isSuccess: Bool
     var message: String
+    var error: ErrorModel {
+        return ErrorModel(message)
+    }
+    var rawData: Data?
     var data: T?
-    var json: String?
+    var json: String? {
+        guard let rawData = rawData else { return nil }
+        return String(data: rawData, encoding: String.Encoding.utf8)
+    }
     var request: RequestModel?
     
     public init(from decoder: Decoder) throws {
@@ -23,14 +30,6 @@ struct ResponseModel<T: Codable>: Codable {
         isSuccess = (try? keyedContainer.decode(Bool.self, forKey: CodingKeys.isSuccess)) ?? false
         message = (try? keyedContainer.decode(String.self, forKey: CodingKeys.message)) ?? ""
         data = try? keyedContainer.decode(T.self, forKey: CodingKeys.data)
-    }
-}
-
-// MARK: - Public Functions
-extension ResponseModel {
-    
-    func error() -> ErrorModel {
-        return ErrorModel(message)
     }
 }
 

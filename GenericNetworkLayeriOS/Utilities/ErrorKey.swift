@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Error: String {
+enum ErrorKey: String {
     case general = "Error_general"
     case parsing = "Error_parsing"
 }

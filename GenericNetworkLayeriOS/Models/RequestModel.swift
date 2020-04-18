@@ -31,6 +31,7 @@ class RequestModel: NSObject {
     var body: [String: Any?] {
         return [:]
     }
+    
     // (request, response)
     var isLoggingEnabled: (Bool, Bool) {
         return (true, true)
