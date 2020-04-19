@@ -44,8 +44,13 @@ extension ServiceManager {
             if request.isLoggingEnabled.1 {
                 LogManager.res(responseModel)
             }
+        
+            if responseModel.isSuccess, let data = responseModel.data {
+                completion(Result.success(data))
+            } else {
+                completion(Result.failure(ErrorModel.generalError()))
+            }
 
-            completion(Result.success(responseModel.data!))
         /// Uncomment for rest service
 //        }.resume()
     }
