@@ -13,4 +13,4 @@ The project of the Generic Network Layer in iOS Development article. https://med
 
 You can build your modular network layer.
 
-<a href="https://www.imageupload.net/image/xLjPz"><img src="https://imagehost.imageupload.net/2020/04/19/1hxeOJ--l8qkWRG4XBfSSzg.md.png" alt="1hxeOJ--l8qkWRG4XBfSSzg.png" border="0" /></a>
+<img src="https://miro.medium.com/max/1400/1*hxeOJ--l8qkWRG4XBfSSzg.png" />
