@@ -23,8 +23,13 @@ struct ResponseModel<T: Codable>: Codable {
         return String(data: rawData, encoding: String.Encoding.utf8)
     }
     var request: RequestModel?
+
+    init() {
+        self.isSuccess = false
+        self.message = ""
+    }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
         
         isSuccess = (try? keyedContainer.decode(Bool.self, forKey: CodingKeys.isSuccess)) ?? false
